@@ -116,8 +116,27 @@ void loop()
   
   //copying to sd card
   digitalWrite(8, HIGH);
-  logfile.print("A0 = "); logfile.println(analogRead(0));
-  Serial.print("A0 = "); Serial.println(analogRead(0));
+  logfile.print(a.acceleration.x); 
+  logfile.println();
+  logfile.print(a.acceleration.y); 
+  logfile.println();
+  logfile.print(a.acceleration.z); 
+  logfile.println();
+
+  logfile.print(m.magnetic.x); 
+  logfile.println();
+  logfile.print(m.magnetic.y); 
+  logfile.println();
+  logfile.print(m.magnetic.z); 
+  logfile.println();
+
+  logfile.print(g.gyro.x); 
+  logfile.println();
+  logfile.print(g.gyro.y); 
+  logfile.println();
+  logfile.print(g.gyro.z); 
+  logfile.println();
+
   digitalWrite(8, LOW);
   
 
