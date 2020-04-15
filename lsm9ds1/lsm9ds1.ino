@@ -68,7 +68,7 @@ void setup()
   }
   Serial.println("Found LSM9DS1 9DOF");
 
-    if (!SD.begin(cardSelect)) {
+  if (!SD.begin(cardSelect)) {
     Serial.println("Card init. failed!");
     error(2);
   }
@@ -116,29 +116,28 @@ void loop()
   
   //copying to sd card
   digitalWrite(8, HIGH);
-  logfile.print(a.acceleration.x); 
-  logfile.println();
+  logfile.print(a.acceleration.x);
+  logfile.print(", ");
   logfile.print(a.acceleration.y); 
-  logfile.println();
+  logfile.print(", ");
   logfile.print(a.acceleration.z); 
-  logfile.println();
+  logfile.print(", ");
 
-  logfile.print(m.magnetic.x); 
-  logfile.println();
-  logfile.print(m.magnetic.y); 
-  logfile.println();
-  logfile.print(m.magnetic.z); 
-  logfile.println();
+  logfile.print(m.magnetic.x);
+  logfile.print(", "); 
+  logfile.print(m.magnetic.y);
+  logfile.print(", "); 
+  logfile.print(m.magnetic.z);
+  logfile.print(", ");
 
-  logfile.print(g.gyro.x); 
-  logfile.println();
-  logfile.print(g.gyro.y); 
-  logfile.println();
-  logfile.print(g.gyro.z); 
-  logfile.println();
+  logfile.print(g.gyro.x);
+  logfile.print(", "); 
+  logfile.print(g.gyro.y);
+  logfile.print(", "); 
+  logfile.println(g.gyro.z); 
 
+  logfile.flush();
   digitalWrite(8, LOW);
-  
 
   Serial.println();
   delay(200);
